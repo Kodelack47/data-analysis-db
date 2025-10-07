@@ -73,6 +73,8 @@ const Index = () => {
           <UploadProgressSimulator />
         </div> */}
 
+
+
         {data.length === 0 ? (
           <>
             {/* 🎨 Features Grid - Shows what your app can do */}
