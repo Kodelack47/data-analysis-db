@@ -1,9 +1,8 @@
-
+// src/pages/Index.tsx - Complete and Correct Code
 // ==========================================
 // 🏠 WEEK 1: Index.tsx - Homepage Component
 // ==========================================
-// This is your main homepage! You will customize this in Week 1
-// and add interactive components starting in Week 2.
+import UploadSimulator from '../components/UploadSimulator';
 
 // 📦 React imports - the core tools for building components
 import { useState } from 'react';
@@ -19,19 +18,22 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import DataUpload from '@/components/DataUpload';
 import Dashboard from '@/components/Dashboard';
 import { DataRow } from '@/types/data';
-// 🆕 WEEK 3: Import NameInput demo
-// import NameInput from '@/components/NameInput';
 
-// 🔧 WEEK 2: Import your UploadProgressSimulator component here
-// 🔧 WEEK 3+: Additional imports will be added as you progress
+// 🆕 WEEK 3: Import NameInput demo
+import NameInput from '@/components/NameInput'; 
+
+// 🆕 WEEK 4: Import DataAnalyzer demo
+import DataAnalyzer from '../components/DataAnalyzer'; 
+
+// 🆕 WEEK 5: Import SimpleChart demo <-- ADD THIS LINE
+import SimpleChart from '../components/SimpleChart';
+
+// 🔧 WEEK 2: Import your UploadProgressSimulator component here (or use the one imported above)
 
 const Index = () => {
-  // 🧠 Component State - this is your component's memory!
-  // useState lets your component remember and change data
   const [data, setData] = useState<DataRow[]>([]);      // Stores uploaded data
   const [fileName, setFileName] = useState<string>(''); // Remembers file name
 
-  // 🔄 Event Handler - function that runs when data is uploaded
   const handleDataLoad = (loadedData: DataRow[], name: string) => {
     setData(loadedData);
     setFileName(name);
@@ -50,7 +52,6 @@ const Index = () => {
             </div>
           </div>
           
-          {/* 📝 WEEK 1: Students customize this title with their name */}
           <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
             Plug-N-Learn: One Love
           </h1>
@@ -59,27 +60,34 @@ const Index = () => {
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">
             Upload your dataset and instantly discover insights, visualize trends, and explore your data with interactive charts and analytics.
           </p>
-          <p>Built By Ousmana</p>
-          {/* 🆕 WEEK 3: Live Event Handling Demo (removed NameInput from homepage) */}
-          {/* <div className="mt-8 mb-8 flex justify-center">
+          <p>Built By Ousmana Tunkara</p>
+          
+          {/* 🆕 WEEK 3: Live Event Handling Demo */}
+          <div className="mt-8 mb-8 flex justify-center">
             <NameInput />
-          </div> */}
+          </div>
+
+          {/* 🆕 WEEK 4: Live Data Analysis Demo */}
+          <div className="mt-8 mb-8">
+            <DataAnalyzer />
+          </div>
+          
+          {/* 🆕 WEEK 5: Live Charting Demo <-- ADDED HERE */}
+          <div className="mt-8 mb-8">
+            <SimpleChart />
+          </div>
+          
         </div>
 
-        {/* 🔧 WEEK 2: ADD YOUR PROGRESS COMPONENT HERE! */}
-        {/* This is where students will add their UploadProgressSimulator component */}
-        {/* Example: */}
+        {/* 🔧 WEEK 2: ADD YOUR PROGRESS COMPONENT HERE IF YOU WANT TO SEE IT */}
         {/* <div className="mb-8">
-          <UploadProgressSimulator />
+          <UploadSimulator /> 
         </div> */}
-
-
 
         {data.length === 0 ? (
           <>
             {/* 🎨 Features Grid - Shows what your app can do */}
             <div className="grid md:grid-cols-3 gap-6 mb-12">
-              {/* 📤 Upload Feature Card */}
               <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white/70 backdrop-blur-sm">
                 <CardHeader className="text-center">
                   <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -92,7 +100,6 @@ const Index = () => {
                 </CardHeader>
               </Card>
 
-              {/* 📊 Charts Feature Card */}
               <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white/70 backdrop-blur-sm">
                 <CardHeader className="text-center">
                   <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -105,7 +112,6 @@ const Index = () => {
                 </CardHeader>
               </Card>
 
-              {/* 🧠 Insights Feature Card */}
               <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white/70 backdrop-blur-sm">
                 <CardHeader className="text-center">
                   <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -119,7 +125,6 @@ const Index = () => {
               </Card>
             </div>
 
-            {/* 📤 Upload Section - Where users upload their data */}
             <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm max-w-2xl mx-auto">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl">Get Started</CardTitle>
