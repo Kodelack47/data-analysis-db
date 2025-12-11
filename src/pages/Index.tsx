@@ -28,6 +28,9 @@ import DataAnalyzer from '../components/DataAnalyzer';
 // 🆕 WEEK 5: Import SimpleChart demo <-- ADD THIS LINE
 import SimpleChart from '../components/SimpleChart';
 
+// 🆕 WEEK 7: Import Mock AI Chat (Updated Name) <-- CHANGED HERE
+import MockAIChat from '../components/MockAIChat';
+
 // 🔧 WEEK 2: Import your UploadProgressSimulator component here (or use the one imported above)
 
 const Index = () => {
@@ -77,6 +80,11 @@ const Index = () => {
             <SimpleChart />
           </div>
           
+          {/* 🆕 WEEK 7: Live AI Chat Demo <-- CHANGED HERE */}
+          <div className="mt-8 mb-8">
+            <MockAIChat /> 
+          </div>
+
         </div>
 
         {/* 🔧 WEEK 2: ADD YOUR PROGRESS COMPONENT HERE IF YOU WANT TO SEE IT */}
