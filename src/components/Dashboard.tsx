@@ -209,9 +209,8 @@ ${Object.entries(summary.columnTypes)
           </CardContent>
         </Card>
       </div>
-
-      {/* Main Content Tabs */}
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
+{/* Main Content Tabs */}
+<Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
         <TabsList className="grid w-full grid-cols-5">
           <TabsTrigger value="overview" className="flex items-center gap-2">
             <BarChart3 className="h-4 w-4" />
@@ -237,21 +236,29 @@ ${Object.entries(summary.columnTypes)
 
         <TabsContent value="overview" className="space-y-4">
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+            {/* Main Chart Area takes 2/3 of the space */}
             <div className="xl:col-span-2">
               <ChartSection data={data} />
             </div>
-            <div className="xl:col-span-1">
-              <InsightsPanel insights={insights.slice(0, 6)} />
+            {/* Insights Panel takes 1/3 of the space (md:col-span-1) */}
+            <div className="md:col-span-1">
+              <InsightsPanel
+                insights={insights}
+                data={data} 
+              />
             </div>
+            {/* The second, duplicate InsightsPanel definition has been removed entirely */}
           </div>
         </TabsContent>
+
 
         <TabsContent value="charts">
           <ChartSection data={data} showAll />
         </TabsContent>
 
         <TabsContent value="insights">
-          <InsightsPanel insights={insights} showAll />
+          {/* FIX: Add data={data} to this InsightsPanel instance */}
+          <InsightsPanel insights={insights} showAll data={data} />
         </TabsContent>
 
         <TabsContent value="chat">
