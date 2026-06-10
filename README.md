@@ -96,7 +96,6 @@ src/
 **Ousmana Tunkara**
 Full Stack Engineer | AI Evaluator | CS Student at WGU
 
-- 🌐 Portfolio: [tunkaraportfolio.com](https://tunkaraportfolio.com)
+
 - 💼 LinkedIn: [linkedin.com/in/o-tunkara](https://linkedin.com/in/o-tunkara)
 - 🐙 GitHub: [github.com/Kodelack47](https://github.com/Kodelack47)
-- 📧 Email: OusmanaTunkara1@gmail.com
