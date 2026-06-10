@@ -1,6 +1,5 @@
 
 # 🎯 Plug-N-Learn: Data Analysis Dashboard
-# 📊 Data Analysis Dashboard
 
 A full-stack interactive data analysis platform built with React, TypeScript, and Tailwind CSS. Users can upload CSV files, explore data through dynamic visualizations, and receive AI-powered insights through a built-in chat interface.
 
